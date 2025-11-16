@@ -51,10 +51,16 @@ struct FLinearColor;
 	DECLARE_FUNCTION(execRadToDeg); \
 	DECLARE_FUNCTION(execDegToRad); \
 	DECLARE_FUNCTION(execSlerp); \
+	DECLARE_FUNCTION(execRoundVector4); \
+	DECLARE_FUNCTION(execRoundVector); \
+	DECLARE_FUNCTION(execRoundVector2D); \
+	DECLARE_FUNCTION(execFloorVector4); \
+	DECLARE_FUNCTION(execFloorVector); \
+	DECLARE_FUNCTION(execFloorVector2D); \
 	DECLARE_FUNCTION(execAvgVector4); \
 	DECLARE_FUNCTION(execAvgVector); \
-	DECLARE_FUNCTION(execSumVector4); \
 	DECLARE_FUNCTION(execAvgVector2D); \
+	DECLARE_FUNCTION(execSumVector4); \
 	DECLARE_FUNCTION(execSumVector); \
 	DECLARE_FUNCTION(execSumVector2D); \
 	DECLARE_FUNCTION(execNormalizeSafe); \
@@ -65,12 +71,12 @@ struct FLinearColor;
 	DECLARE_FUNCTION(execSmoothstep); \
 	DECLARE_FUNCTION(execSaturateVector); \
 	DECLARE_FUNCTION(execSaturate); \
+	DECLARE_FUNCTION(execRemap_Sat); \
+	DECLARE_FUNCTION(execRemap); \
 	DECLARE_FUNCTION(execInvLerpVector_Sat); \
 	DECLARE_FUNCTION(execInvLerpVector); \
 	DECLARE_FUNCTION(execInvLerp_sat); \
-	DECLARE_FUNCTION(execInvLerp); \
-	DECLARE_FUNCTION(execRemap_Sat); \
-	DECLARE_FUNCTION(execRemap);
+	DECLARE_FUNCTION(execInvLerp);
 
 
 ICEMOONBLUEPRINTGPUMATHUTILITIES_API UClass* Z_Construct_UClass_UIMMathUtils_BP_NoRegister();

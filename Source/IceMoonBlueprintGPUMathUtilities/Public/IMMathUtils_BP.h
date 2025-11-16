@@ -9,42 +9,37 @@ class ICEMOONBLUEPRINTGPUMATHUTILITIES_API UIMMathUtils_BP : public UBlueprintFu
 	GENERATED_BODY()
 
 public:
+	
+	UFUNCTION(BlueprintPure, Category="IM|Math", meta = (BlueprintThreadSafe))
+	static float InvLerp(float InMin, float InMax, float Value){
+		return IMMathUtils::InvLerp(InMin, InMax, Value);
+	}
+	UFUNCTION(BlueprintPure, Category="IM|Math", meta = (BlueprintThreadSafe))
+	static float InvLerp_sat(float InMin, float InMax, float Value)  {
+		return IMMathUtils::InvLerp_Sat(InMin, InMax, Value);
+	}
+	UFUNCTION(BlueprintPure, Category="IM|Math", meta = (BlueprintThreadSafe))
+	static FVector InvLerpVector(FVector InMin, FVector InMax, FVector Value) {
+		return IMMathUtils::InvLerpVector(InMin, InMax, Value);
+	}
+	UFUNCTION(BlueprintPure, Category="IM|Math", meta = (BlueprintThreadSafe))
+	static FVector InvLerpVector_Sat(FVector InMin, FVector InMax, FVector Value){
+		return IMMathUtils::InvLerpVector_Sat(InMin, InMax, Value);
+	}
 
 	UFUNCTION(BlueprintPure, Category="IM|Math", meta = (BlueprintThreadSafe))
 	static float Remap(float InMin, float InMax, float OutMin, float OutMax, float Value){
 		return IMMathUtils::Remap(InMin, InMax, OutMin, OutMax, Value);
 	}
-
 	UFUNCTION(BlueprintPure, Category="IM|Math", meta = (BlueprintThreadSafe))
 	static float Remap_Sat(float InMin, float InMax, float OutMin, float OutMax, float Value){
 		return IMMathUtils::Remap_Sat(InMin, InMax, OutMin, OutMax, Value);
 	}
 	
 	UFUNCTION(BlueprintPure, Category="IM|Math", meta = (BlueprintThreadSafe))
-	static float InvLerp(float InMin, float InMax, float Value){
-		return IMMathUtils::InvLerp(InMin, InMax, Value);
-	}
-
-	UFUNCTION(BlueprintPure, Category="IM|Math", meta = (BlueprintThreadSafe))
-	static float InvLerp_sat(float InMin, float InMax, float Value)  {
-		return IMMathUtils::InvLerp_Sat(InMin, InMax, Value);
-	}
-
-	UFUNCTION(BlueprintPure, Category="IM|Math", meta = (BlueprintThreadSafe))
-	static FVector InvLerpVector(FVector InMin, FVector InMax, FVector Value) {
-		return IMMathUtils::InvLerpVector(InMin, InMax, Value);
-	}
-
-	UFUNCTION(BlueprintPure, Category="IM|Math", meta = (BlueprintThreadSafe))
-	static FVector InvLerpVector_Sat(FVector InMin, FVector InMax, FVector Value){
-		return IMMathUtils::InvLerpVector_Sat(InMin, InMax, Value);
-	}
-	
-	UFUNCTION(BlueprintPure, Category="IM|Math", meta = (BlueprintThreadSafe))
 	static float Saturate(float Value){
 		return IMMathUtils::Saturate(Value);
 	}
-
 	UFUNCTION(BlueprintPure, Category="IM|Math", meta = (BlueprintThreadSafe))
 	static FVector SaturateVector(FVector Value){
 		return IMMathUtils::SaturateVector(Value);
@@ -54,7 +49,6 @@ public:
 	static float Smoothstep(float InMin, float InMax, float Value){
 		return IMMathUtils::Smoothstep(InMin, InMax, Value);
 	}
-
 	UFUNCTION(BlueprintPure, Category="IM|Math", meta = (BlueprintThreadSafe))
 	static float Smoothstep_Sat(float InMin, float InMax, float Value){
 		return IMMathUtils::Smoothstep_Sat(InMin, InMax, Value);
@@ -64,7 +58,6 @@ public:
 	static float Mad(float MulA, float MulB, float Add){
 		return IMMathUtils::Mad(MulA, MulB, Add);
 	}
-
 	UFUNCTION(BlueprintPure, Category="IM|Math", meta = (BlueprintThreadSafe))
 	static FVector MadVector(FVector MulA, FVector MulB, FVector Add){
 		return IMMathUtils::Mad(MulA, MulB, Add);
@@ -85,30 +78,57 @@ public:
 	static float SumVector2D(FVector2D Value){
 		return IMMathUtils::SumVector(Value);
 	}
-
 	UFUNCTION(BlueprintPure, Category="IM|Math|Vector", meta = (BlueprintThreadSafe))
 	static float SumVector(FVector Value){
 		return IMMathUtils::SumVector(Value);
 	}
-
-	UFUNCTION(BlueprintPure, Category="IM|Math|Vector", meta = (BlueprintThreadSafe))
-	static float AvgVector2D(FVector2D Value){
-		return IMMathUtils::SumVector(Value);
-	}
-	
 	UFUNCTION(BlueprintPure, Category="IM|Math|Vector", meta = (BlueprintThreadSafe))
 	static float SumVector4(FVector4 Value){
 		return IMMathUtils::SumVector(Value);
 	}
-
+	
+	UFUNCTION(BlueprintPure, Category="IM|Math|Vector", meta = (BlueprintThreadSafe))
+	static float AvgVector2D(FVector2D Value){
+		return IMMathUtils::SumVector(Value);
+	}
 	UFUNCTION(BlueprintPure, Category="IM|Math|Vector", meta = (BlueprintThreadSafe))
 	static float AvgVector(FVector Value){
 		return IMMathUtils::AvgVector(Value);
 	}
-
 	UFUNCTION(BlueprintPure, Category="IM|Math|Vector", meta = (BlueprintThreadSafe))
 	static float AvgVector4(FVector4 Value){
 		return IMMathUtils::AvgVector(Value);
+	}
+	UFUNCTION(BlueprintPure, Category="IM|Math|Vector", meta = (BlueprintThreadSafe))
+	static FIntVector2 FloorVector2D(const FVector2D& V)
+	{
+		return IMMathUtils::FloorVector2D(V);
+	}
+	UFUNCTION(BlueprintPure, Category="IM|Math|Vector", meta = (BlueprintThreadSafe))
+	static FIntVector FloorVector(const FVector& V)
+	{
+		return IMMathUtils::FloorVector(V);
+	}
+	UFUNCTION(BlueprintPure, Category="IM|Math|Vector", meta = (BlueprintThreadSafe))
+	static FIntVector4 FloorVector4(const FVector4& V)
+	{
+		return IMMathUtils::FloorVector4(V);
+	}
+
+	UFUNCTION(BlueprintPure, Category="IM|Math|Vector", meta = (BlueprintThreadSafe))
+	static FIntVector2 RoundVector2D(const FVector2D& V)
+	{
+		return IMMathUtils::RoundVector2D(V);
+	}
+	UFUNCTION(BlueprintPure, Category="IM|Math|Vector", meta = (BlueprintThreadSafe))
+	static FIntVector RoundVector(const FVector& V)
+	{
+		return IMMathUtils::RoundVector(V);
+	}
+	UFUNCTION(BlueprintPure, Category="IM|Math|Vector", meta = (BlueprintThreadSafe))
+	static FIntVector4 RoundVector4(const FVector4& V)
+	{
+		return IMMathUtils::RoundVector4(V);
 	}
 	
 	UFUNCTION(BlueprintPure, Category="IM|Math|Vector", meta = (BlueprintThreadSafe))
@@ -133,7 +153,7 @@ public:
 	static bool SortFloat(UPARAM(ref) float& A, UPARAM(ref) float& B){
 		return IMMathUtils::Sort(A, B);
 	}
-	
+	//if (a > b) Swap return true
 	UFUNCTION(BlueprintCallable, Category="IM|Math|Utility", meta = (BlueprintThreadSafe))
 	static bool SortInt(UPARAM(ref) int& A, UPARAM(ref) int& B){
 		return IMMathUtils::Sort(A, B);
@@ -243,12 +263,10 @@ public:
 	static float Log2GaussianRandom(FVector P, float Mean, float StdDev){
 		return IMMathUtils::Log2GaussianRandom(P, Mean, StdDev);
 	}
-
 	UFUNCTION(BlueprintPure, Category="IM|Math|Random", meta = (BlueprintThreadSafe))
 	static float LogeGaussianRandom(FVector P, float Mean, float StdDev){
 		return IMMathUtils::LogeGaussianRandom(P, Mean, StdDev);
 	}
-
 	UFUNCTION(BlueprintPure, Category="IM|Math|Random", meta = (BlueprintThreadSafe))
 	static float Log10GaussianRandom(FVector P, float Mean, float StdDev){
 		return IMMathUtils::Log10GaussianRandom(P, Mean, StdDev);
@@ -260,7 +278,6 @@ public:
 	static float Pow2(float A){
 		return IMMathUtils::Pow2(A);
 	}
-
 	UFUNCTION(BlueprintPure, Category="IM|Math|Power", meta = (BlueprintThreadSafe, CompactNodeTitle="²"))
 	static FVector Pow2Vector(FVector A){
 		return IMMathUtils::Pow2Vector(A);
@@ -270,12 +287,11 @@ public:
 	static float LengthSquared2D(FVector2D V){
 		return IMMathUtils::LengthSquared(V);
 	}
-
 	UFUNCTION(BlueprintPure, Category="IM|Math|Power", meta = (BlueprintThreadSafe))
 	static float LengthSquared(FVector V){
 		return IMMathUtils::LengthSquared(V);
 	}
-
+	
 	// RandomSeed 是固定大概的起始随机射线位置  开了bStochasticJitter会导致微小偏移
 	UFUNCTION(BlueprintCallable, Category="IM|Math", meta = (BlueprintThreadSafe))
 	static void GetFibonacciSphereSamples(

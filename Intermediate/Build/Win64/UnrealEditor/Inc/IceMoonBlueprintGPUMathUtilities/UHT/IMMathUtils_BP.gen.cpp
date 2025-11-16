@@ -13,6 +13,8 @@ void EmptyLinkFunctionForGeneratedCodeIMMathUtils_BP() {}
 
 // ********** Begin Cross Module References ********************************************************
 COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FIntVector();
+COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FIntVector2();
+COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FIntVector4();
 COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FLinearColor();
 COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector2D();
@@ -430,6 +432,159 @@ DEFINE_FUNCTION(UIMMathUtils_BP::execDesaturation)
 	P_NATIVE_END;
 }
 // ********** End Class UIMMathUtils_BP Function Desaturation **************************************
+
+// ********** Begin Class UIMMathUtils_BP Function FloorVector *************************************
+struct Z_Construct_UFunction_UIMMathUtils_BP_FloorVector_Statics
+{
+	struct IMMathUtils_BP_eventFloorVector_Parms
+	{
+		FVector V;
+		FIntVector ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "BlueprintThreadSafe", "" },
+		{ "Category", "IM|Math|Vector" },
+		{ "ModuleRelativePath", "Public/IMMathUtils_BP.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_V_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FStructPropertyParams NewProp_V;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UIMMathUtils_BP_FloorVector_Statics::NewProp_V = { "V", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(IMMathUtils_BP_eventFloorVector_Parms, V), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_V_MetaData), NewProp_V_MetaData) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UIMMathUtils_BP_FloorVector_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(IMMathUtils_BP_eventFloorVector_Parms, ReturnValue), Z_Construct_UScriptStruct_FIntVector, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UIMMathUtils_BP_FloorVector_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UIMMathUtils_BP_FloorVector_Statics::NewProp_V,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UIMMathUtils_BP_FloorVector_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UIMMathUtils_BP_FloorVector_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UIMMathUtils_BP_FloorVector_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UIMMathUtils_BP, nullptr, "FloorVector", Z_Construct_UFunction_UIMMathUtils_BP_FloorVector_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UIMMathUtils_BP_FloorVector_Statics::PropPointers), sizeof(Z_Construct_UFunction_UIMMathUtils_BP_FloorVector_Statics::IMMathUtils_BP_eventFloorVector_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14C22401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UIMMathUtils_BP_FloorVector_Statics::Function_MetaDataParams), Z_Construct_UFunction_UIMMathUtils_BP_FloorVector_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_UIMMathUtils_BP_FloorVector_Statics::IMMathUtils_BP_eventFloorVector_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UIMMathUtils_BP_FloorVector()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UIMMathUtils_BP_FloorVector_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UIMMathUtils_BP::execFloorVector)
+{
+	P_GET_STRUCT_REF(FVector,Z_Param_Out_V);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(FIntVector*)Z_Param__Result=UIMMathUtils_BP::FloorVector(Z_Param_Out_V);
+	P_NATIVE_END;
+}
+// ********** End Class UIMMathUtils_BP Function FloorVector ***************************************
+
+// ********** Begin Class UIMMathUtils_BP Function FloorVector2D ***********************************
+struct Z_Construct_UFunction_UIMMathUtils_BP_FloorVector2D_Statics
+{
+	struct IMMathUtils_BP_eventFloorVector2D_Parms
+	{
+		FVector2D V;
+		FIntVector2 ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "BlueprintThreadSafe", "" },
+		{ "Category", "IM|Math|Vector" },
+		{ "ModuleRelativePath", "Public/IMMathUtils_BP.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_V_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FStructPropertyParams NewProp_V;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UIMMathUtils_BP_FloorVector2D_Statics::NewProp_V = { "V", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(IMMathUtils_BP_eventFloorVector2D_Parms, V), Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_V_MetaData), NewProp_V_MetaData) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UIMMathUtils_BP_FloorVector2D_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(IMMathUtils_BP_eventFloorVector2D_Parms, ReturnValue), Z_Construct_UScriptStruct_FIntVector2, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UIMMathUtils_BP_FloorVector2D_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UIMMathUtils_BP_FloorVector2D_Statics::NewProp_V,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UIMMathUtils_BP_FloorVector2D_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UIMMathUtils_BP_FloorVector2D_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UIMMathUtils_BP_FloorVector2D_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UIMMathUtils_BP, nullptr, "FloorVector2D", Z_Construct_UFunction_UIMMathUtils_BP_FloorVector2D_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UIMMathUtils_BP_FloorVector2D_Statics::PropPointers), sizeof(Z_Construct_UFunction_UIMMathUtils_BP_FloorVector2D_Statics::IMMathUtils_BP_eventFloorVector2D_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14C22401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UIMMathUtils_BP_FloorVector2D_Statics::Function_MetaDataParams), Z_Construct_UFunction_UIMMathUtils_BP_FloorVector2D_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_UIMMathUtils_BP_FloorVector2D_Statics::IMMathUtils_BP_eventFloorVector2D_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UIMMathUtils_BP_FloorVector2D()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UIMMathUtils_BP_FloorVector2D_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UIMMathUtils_BP::execFloorVector2D)
+{
+	P_GET_STRUCT_REF(FVector2D,Z_Param_Out_V);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(FIntVector2*)Z_Param__Result=UIMMathUtils_BP::FloorVector2D(Z_Param_Out_V);
+	P_NATIVE_END;
+}
+// ********** End Class UIMMathUtils_BP Function FloorVector2D *************************************
+
+// ********** Begin Class UIMMathUtils_BP Function FloorVector4 ************************************
+struct Z_Construct_UFunction_UIMMathUtils_BP_FloorVector4_Statics
+{
+	struct IMMathUtils_BP_eventFloorVector4_Parms
+	{
+		FVector4 V;
+		FIntVector4 ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "BlueprintThreadSafe", "" },
+		{ "Category", "IM|Math|Vector" },
+		{ "ModuleRelativePath", "Public/IMMathUtils_BP.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_V_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FStructPropertyParams NewProp_V;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UIMMathUtils_BP_FloorVector4_Statics::NewProp_V = { "V", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(IMMathUtils_BP_eventFloorVector4_Parms, V), Z_Construct_UScriptStruct_FVector4, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_V_MetaData), NewProp_V_MetaData) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UIMMathUtils_BP_FloorVector4_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(IMMathUtils_BP_eventFloorVector4_Parms, ReturnValue), Z_Construct_UScriptStruct_FIntVector4, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UIMMathUtils_BP_FloorVector4_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UIMMathUtils_BP_FloorVector4_Statics::NewProp_V,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UIMMathUtils_BP_FloorVector4_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UIMMathUtils_BP_FloorVector4_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UIMMathUtils_BP_FloorVector4_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UIMMathUtils_BP, nullptr, "FloorVector4", Z_Construct_UFunction_UIMMathUtils_BP_FloorVector4_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UIMMathUtils_BP_FloorVector4_Statics::PropPointers), sizeof(Z_Construct_UFunction_UIMMathUtils_BP_FloorVector4_Statics::IMMathUtils_BP_eventFloorVector4_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14C22401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UIMMathUtils_BP_FloorVector4_Statics::Function_MetaDataParams), Z_Construct_UFunction_UIMMathUtils_BP_FloorVector4_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_UIMMathUtils_BP_FloorVector4_Statics::IMMathUtils_BP_eventFloorVector4_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UIMMathUtils_BP_FloorVector4()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UIMMathUtils_BP_FloorVector4_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UIMMathUtils_BP::execFloorVector4)
+{
+	P_GET_STRUCT_REF(FVector4,Z_Param_Out_V);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(FIntVector4*)Z_Param__Result=UIMMathUtils_BP::FloorVector4(Z_Param_Out_V);
+	P_NATIVE_END;
+}
+// ********** End Class UIMMathUtils_BP Function FloorVector4 **************************************
 
 // ********** Begin Class UIMMathUtils_BP Function GaussianRandom **********************************
 struct Z_Construct_UFunction_UIMMathUtils_BP_GaussianRandom_Statics
@@ -1794,6 +1949,159 @@ DEFINE_FUNCTION(UIMMathUtils_BP::execRemap_Sat)
 }
 // ********** End Class UIMMathUtils_BP Function Remap_Sat *****************************************
 
+// ********** Begin Class UIMMathUtils_BP Function RoundVector *************************************
+struct Z_Construct_UFunction_UIMMathUtils_BP_RoundVector_Statics
+{
+	struct IMMathUtils_BP_eventRoundVector_Parms
+	{
+		FVector V;
+		FIntVector ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "BlueprintThreadSafe", "" },
+		{ "Category", "IM|Math|Vector" },
+		{ "ModuleRelativePath", "Public/IMMathUtils_BP.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_V_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FStructPropertyParams NewProp_V;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UIMMathUtils_BP_RoundVector_Statics::NewProp_V = { "V", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(IMMathUtils_BP_eventRoundVector_Parms, V), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_V_MetaData), NewProp_V_MetaData) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UIMMathUtils_BP_RoundVector_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(IMMathUtils_BP_eventRoundVector_Parms, ReturnValue), Z_Construct_UScriptStruct_FIntVector, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UIMMathUtils_BP_RoundVector_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UIMMathUtils_BP_RoundVector_Statics::NewProp_V,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UIMMathUtils_BP_RoundVector_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UIMMathUtils_BP_RoundVector_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UIMMathUtils_BP_RoundVector_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UIMMathUtils_BP, nullptr, "RoundVector", Z_Construct_UFunction_UIMMathUtils_BP_RoundVector_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UIMMathUtils_BP_RoundVector_Statics::PropPointers), sizeof(Z_Construct_UFunction_UIMMathUtils_BP_RoundVector_Statics::IMMathUtils_BP_eventRoundVector_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14C22401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UIMMathUtils_BP_RoundVector_Statics::Function_MetaDataParams), Z_Construct_UFunction_UIMMathUtils_BP_RoundVector_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_UIMMathUtils_BP_RoundVector_Statics::IMMathUtils_BP_eventRoundVector_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UIMMathUtils_BP_RoundVector()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UIMMathUtils_BP_RoundVector_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UIMMathUtils_BP::execRoundVector)
+{
+	P_GET_STRUCT_REF(FVector,Z_Param_Out_V);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(FIntVector*)Z_Param__Result=UIMMathUtils_BP::RoundVector(Z_Param_Out_V);
+	P_NATIVE_END;
+}
+// ********** End Class UIMMathUtils_BP Function RoundVector ***************************************
+
+// ********** Begin Class UIMMathUtils_BP Function RoundVector2D ***********************************
+struct Z_Construct_UFunction_UIMMathUtils_BP_RoundVector2D_Statics
+{
+	struct IMMathUtils_BP_eventRoundVector2D_Parms
+	{
+		FVector2D V;
+		FIntVector2 ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "BlueprintThreadSafe", "" },
+		{ "Category", "IM|Math|Vector" },
+		{ "ModuleRelativePath", "Public/IMMathUtils_BP.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_V_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FStructPropertyParams NewProp_V;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UIMMathUtils_BP_RoundVector2D_Statics::NewProp_V = { "V", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(IMMathUtils_BP_eventRoundVector2D_Parms, V), Z_Construct_UScriptStruct_FVector2D, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_V_MetaData), NewProp_V_MetaData) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UIMMathUtils_BP_RoundVector2D_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(IMMathUtils_BP_eventRoundVector2D_Parms, ReturnValue), Z_Construct_UScriptStruct_FIntVector2, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UIMMathUtils_BP_RoundVector2D_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UIMMathUtils_BP_RoundVector2D_Statics::NewProp_V,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UIMMathUtils_BP_RoundVector2D_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UIMMathUtils_BP_RoundVector2D_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UIMMathUtils_BP_RoundVector2D_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UIMMathUtils_BP, nullptr, "RoundVector2D", Z_Construct_UFunction_UIMMathUtils_BP_RoundVector2D_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UIMMathUtils_BP_RoundVector2D_Statics::PropPointers), sizeof(Z_Construct_UFunction_UIMMathUtils_BP_RoundVector2D_Statics::IMMathUtils_BP_eventRoundVector2D_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14C22401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UIMMathUtils_BP_RoundVector2D_Statics::Function_MetaDataParams), Z_Construct_UFunction_UIMMathUtils_BP_RoundVector2D_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_UIMMathUtils_BP_RoundVector2D_Statics::IMMathUtils_BP_eventRoundVector2D_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UIMMathUtils_BP_RoundVector2D()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UIMMathUtils_BP_RoundVector2D_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UIMMathUtils_BP::execRoundVector2D)
+{
+	P_GET_STRUCT_REF(FVector2D,Z_Param_Out_V);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(FIntVector2*)Z_Param__Result=UIMMathUtils_BP::RoundVector2D(Z_Param_Out_V);
+	P_NATIVE_END;
+}
+// ********** End Class UIMMathUtils_BP Function RoundVector2D *************************************
+
+// ********** Begin Class UIMMathUtils_BP Function RoundVector4 ************************************
+struct Z_Construct_UFunction_UIMMathUtils_BP_RoundVector4_Statics
+{
+	struct IMMathUtils_BP_eventRoundVector4_Parms
+	{
+		FVector4 V;
+		FIntVector4 ReturnValue;
+	};
+#if WITH_METADATA
+	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
+		{ "BlueprintThreadSafe", "" },
+		{ "Category", "IM|Math|Vector" },
+		{ "ModuleRelativePath", "Public/IMMathUtils_BP.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_V_MetaData[] = {
+		{ "NativeConst", "" },
+	};
+#endif // WITH_METADATA
+	static const UECodeGen_Private::FStructPropertyParams NewProp_V;
+	static const UECodeGen_Private::FStructPropertyParams NewProp_ReturnValue;
+	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
+	static const UECodeGen_Private::FFunctionParams FuncParams;
+};
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UIMMathUtils_BP_RoundVector4_Statics::NewProp_V = { "V", nullptr, (EPropertyFlags)0x0010000008000182, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(IMMathUtils_BP_eventRoundVector4_Parms, V), Z_Construct_UScriptStruct_FVector4, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_V_MetaData), NewProp_V_MetaData) };
+const UECodeGen_Private::FStructPropertyParams Z_Construct_UFunction_UIMMathUtils_BP_RoundVector4_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(IMMathUtils_BP_eventRoundVector4_Parms, ReturnValue), Z_Construct_UScriptStruct_FIntVector4, METADATA_PARAMS(0, nullptr) };
+const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_UIMMathUtils_BP_RoundVector4_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UIMMathUtils_BP_RoundVector4_Statics::NewProp_V,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_UIMMathUtils_BP_RoundVector4_Statics::NewProp_ReturnValue,
+};
+static_assert(UE_ARRAY_COUNT(Z_Construct_UFunction_UIMMathUtils_BP_RoundVector4_Statics::PropPointers) < 2048);
+const UECodeGen_Private::FFunctionParams Z_Construct_UFunction_UIMMathUtils_BP_RoundVector4_Statics::FuncParams = { { (UObject*(*)())Z_Construct_UClass_UIMMathUtils_BP, nullptr, "RoundVector4", Z_Construct_UFunction_UIMMathUtils_BP_RoundVector4_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_UIMMathUtils_BP_RoundVector4_Statics::PropPointers), sizeof(Z_Construct_UFunction_UIMMathUtils_BP_RoundVector4_Statics::IMMathUtils_BP_eventRoundVector4_Parms), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x14C22401, 0, 0, METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UFunction_UIMMathUtils_BP_RoundVector4_Statics::Function_MetaDataParams), Z_Construct_UFunction_UIMMathUtils_BP_RoundVector4_Statics::Function_MetaDataParams)},  };
+static_assert(sizeof(Z_Construct_UFunction_UIMMathUtils_BP_RoundVector4_Statics::IMMathUtils_BP_eventRoundVector4_Parms) < MAX_uint16);
+UFunction* Z_Construct_UFunction_UIMMathUtils_BP_RoundVector4()
+{
+	static UFunction* ReturnFunction = nullptr;
+	if (!ReturnFunction)
+	{
+		UECodeGen_Private::ConstructUFunction(&ReturnFunction, Z_Construct_UFunction_UIMMathUtils_BP_RoundVector4_Statics::FuncParams);
+	}
+	return ReturnFunction;
+}
+DEFINE_FUNCTION(UIMMathUtils_BP::execRoundVector4)
+{
+	P_GET_STRUCT_REF(FVector4,Z_Param_Out_V);
+	P_FINISH;
+	P_NATIVE_BEGIN;
+	*(FIntVector4*)Z_Param__Result=UIMMathUtils_BP::RoundVector4(Z_Param_Out_V);
+	P_NATIVE_END;
+}
+// ********** End Class UIMMathUtils_BP Function RoundVector4 **************************************
+
 // ********** Begin Class UIMMathUtils_BP Function Saturate ****************************************
 struct Z_Construct_UFunction_UIMMathUtils_BP_Saturate_Statics
 {
@@ -2316,7 +2624,13 @@ struct Z_Construct_UFunction_UIMMathUtils_BP_SortInt_Statics
 	static constexpr UECodeGen_Private::FMetaDataPairParam Function_MetaDataParams[] = {
 		{ "BlueprintThreadSafe", "" },
 		{ "Category", "IM|Math|Utility" },
+#if !UE_BUILD_SHIPPING
+		{ "Comment", "//if (a > b) Swap return true\n" },
+#endif
 		{ "ModuleRelativePath", "Public/IMMathUtils_BP.h" },
+#if !UE_BUILD_SHIPPING
+		{ "ToolTip", "if (a > b) Swap return true" },
+#endif
 	};
 #endif // WITH_METADATA
 	static const UECodeGen_Private::FIntPropertyParams NewProp_A;
@@ -2860,6 +3174,9 @@ void UIMMathUtils_BP::StaticRegisterNativesUIMMathUtils_BP()
 		{ "CapsuleDistance", &UIMMathUtils_BP::execCapsuleDistance },
 		{ "DegToRad", &UIMMathUtils_BP::execDegToRad },
 		{ "Desaturation", &UIMMathUtils_BP::execDesaturation },
+		{ "FloorVector", &UIMMathUtils_BP::execFloorVector },
+		{ "FloorVector2D", &UIMMathUtils_BP::execFloorVector2D },
+		{ "FloorVector4", &UIMMathUtils_BP::execFloorVector4 },
 		{ "GaussianRandom", &UIMMathUtils_BP::execGaussianRandom },
 		{ "GetFibonacciSphereSamples", &UIMMathUtils_BP::execGetFibonacciSphereSamples },
 		{ "Hash21", &UIMMathUtils_BP::execHash21 },
@@ -2884,6 +3201,9 @@ void UIMMathUtils_BP::StaticRegisterNativesUIMMathUtils_BP()
 		{ "RadToDeg", &UIMMathUtils_BP::execRadToDeg },
 		{ "Remap", &UIMMathUtils_BP::execRemap },
 		{ "Remap_Sat", &UIMMathUtils_BP::execRemap_Sat },
+		{ "RoundVector", &UIMMathUtils_BP::execRoundVector },
+		{ "RoundVector2D", &UIMMathUtils_BP::execRoundVector2D },
+		{ "RoundVector4", &UIMMathUtils_BP::execRoundVector4 },
 		{ "Saturate", &UIMMathUtils_BP::execSaturate },
 		{ "SaturateVector", &UIMMathUtils_BP::execSaturateVector },
 		{ "SdfMax", &UIMMathUtils_BP::execSdfMax },
@@ -2953,6 +3273,9 @@ struct Z_Construct_UClass_UIMMathUtils_BP_Statics
 		{ &Z_Construct_UFunction_UIMMathUtils_BP_CapsuleDistance, "CapsuleDistance" }, // 3997585203
 		{ &Z_Construct_UFunction_UIMMathUtils_BP_DegToRad, "DegToRad" }, // 3943016847
 		{ &Z_Construct_UFunction_UIMMathUtils_BP_Desaturation, "Desaturation" }, // 4196207709
+		{ &Z_Construct_UFunction_UIMMathUtils_BP_FloorVector, "FloorVector" }, // 2396091882
+		{ &Z_Construct_UFunction_UIMMathUtils_BP_FloorVector2D, "FloorVector2D" }, // 2212747382
+		{ &Z_Construct_UFunction_UIMMathUtils_BP_FloorVector4, "FloorVector4" }, // 2255568010
 		{ &Z_Construct_UFunction_UIMMathUtils_BP_GaussianRandom, "GaussianRandom" }, // 3859616005
 		{ &Z_Construct_UFunction_UIMMathUtils_BP_GetFibonacciSphereSamples, "GetFibonacciSphereSamples" }, // 1544400524
 		{ &Z_Construct_UFunction_UIMMathUtils_BP_Hash21, "Hash21" }, // 3783634380
@@ -2977,6 +3300,9 @@ struct Z_Construct_UClass_UIMMathUtils_BP_Statics
 		{ &Z_Construct_UFunction_UIMMathUtils_BP_RadToDeg, "RadToDeg" }, // 3615752911
 		{ &Z_Construct_UFunction_UIMMathUtils_BP_Remap, "Remap" }, // 1207581375
 		{ &Z_Construct_UFunction_UIMMathUtils_BP_Remap_Sat, "Remap_Sat" }, // 3151814683
+		{ &Z_Construct_UFunction_UIMMathUtils_BP_RoundVector, "RoundVector" }, // 391869435
+		{ &Z_Construct_UFunction_UIMMathUtils_BP_RoundVector2D, "RoundVector2D" }, // 2752212178
+		{ &Z_Construct_UFunction_UIMMathUtils_BP_RoundVector4, "RoundVector4" }, // 2916926119
 		{ &Z_Construct_UFunction_UIMMathUtils_BP_Saturate, "Saturate" }, // 1742486890
 		{ &Z_Construct_UFunction_UIMMathUtils_BP_SaturateVector, "SaturateVector" }, // 291542988
 		{ &Z_Construct_UFunction_UIMMathUtils_BP_SdfMax, "SdfMax" }, // 2733321752
@@ -2986,7 +3312,7 @@ struct Z_Construct_UClass_UIMMathUtils_BP_Statics
 		{ &Z_Construct_UFunction_UIMMathUtils_BP_Smoothstep, "Smoothstep" }, // 3489041948
 		{ &Z_Construct_UFunction_UIMMathUtils_BP_Smoothstep_Sat, "Smoothstep_Sat" }, // 240983926
 		{ &Z_Construct_UFunction_UIMMathUtils_BP_SortFloat, "SortFloat" }, // 79027346
-		{ &Z_Construct_UFunction_UIMMathUtils_BP_SortInt, "SortInt" }, // 158928236
+		{ &Z_Construct_UFunction_UIMMathUtils_BP_SortInt, "SortInt" }, // 4015655754
 		{ &Z_Construct_UFunction_UIMMathUtils_BP_SumVector, "SumVector" }, // 226584049
 		{ &Z_Construct_UFunction_UIMMathUtils_BP_SumVector2D, "SumVector2D" }, // 3527126964
 		{ &Z_Construct_UFunction_UIMMathUtils_BP_SumVector4, "SumVector4" }, // 4114649602
@@ -3041,10 +3367,10 @@ UIMMathUtils_BP::~UIMMathUtils_BP() {}
 struct Z_CompiledInDeferFile_FID_BaiduSyncdisk_project_Test550_Plugins_IceMoonBlueprintGPUMathUtilities_Source_IceMoonBlueprintGPUMathUtilities_Public_IMMathUtils_BP_h__Script_IceMoonBlueprintGPUMathUtilities_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_UIMMathUtils_BP, UIMMathUtils_BP::StaticClass, TEXT("UIMMathUtils_BP"), &Z_Registration_Info_UClass_UIMMathUtils_BP, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UIMMathUtils_BP), 3868350258U) },
+		{ Z_Construct_UClass_UIMMathUtils_BP, UIMMathUtils_BP::StaticClass, TEXT("UIMMathUtils_BP"), &Z_Registration_Info_UClass_UIMMathUtils_BP, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UIMMathUtils_BP), 3507142294U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BaiduSyncdisk_project_Test550_Plugins_IceMoonBlueprintGPUMathUtilities_Source_IceMoonBlueprintGPUMathUtilities_Public_IMMathUtils_BP_h__Script_IceMoonBlueprintGPUMathUtilities_2181867477(TEXT("/Script/IceMoonBlueprintGPUMathUtilities"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_BaiduSyncdisk_project_Test550_Plugins_IceMoonBlueprintGPUMathUtilities_Source_IceMoonBlueprintGPUMathUtilities_Public_IMMathUtils_BP_h__Script_IceMoonBlueprintGPUMathUtilities_2870250238(TEXT("/Script/IceMoonBlueprintGPUMathUtilities"),
 	Z_CompiledInDeferFile_FID_BaiduSyncdisk_project_Test550_Plugins_IceMoonBlueprintGPUMathUtilities_Source_IceMoonBlueprintGPUMathUtilities_Public_IMMathUtils_BP_h__Script_IceMoonBlueprintGPUMathUtilities_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_BaiduSyncdisk_project_Test550_Plugins_IceMoonBlueprintGPUMathUtilities_Source_IceMoonBlueprintGPUMathUtilities_Public_IMMathUtils_BP_h__Script_IceMoonBlueprintGPUMathUtilities_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

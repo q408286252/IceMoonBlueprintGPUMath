@@ -11,12 +11,29 @@ namespace IMMathUtils
 		if ( InMin == InMax ) return 0.0;
 		return (Value - InMin) / (InMax - InMin);
 	}
-	
 	template< class T > 
 	inline T InvLerp_Sat(T InMin, T InMax, T Value)
 	{
 		T a =InvLerp(InMin, InMax, Value);
 		return FMath::Clamp(a, 0.f, 1.f);
+	}
+	inline FVector InvLerpVector(const FVector& InMin, const FVector& InMax, const FVector& Value)
+	{
+		FVector Result = (Value - InMin) / (InMax - InMin);
+		return FVector(
+			FMath::IsFinite(Result.X) ? Result.X : 0.0f,
+			FMath::IsFinite(Result.Y) ? Result.Y : 0.0f,
+			FMath::IsFinite(Result.Z) ? Result.Z : 0.0f
+		);
+	}
+	inline FVector InvLerpVector_Sat(const FVector& InMin, const FVector& InMax, const FVector& Value)
+	{
+		FVector Result = (Value - InMin) / (InMax - InMin);
+		return FVector(
+			FMath::Clamp(Result.X, 0.0f, 1.0f),
+			FMath::Clamp(Result.Y, 0.0f, 1.0f),
+			FMath::Clamp(Result.Z, 0.0f, 1.0f)
+		);
 	}
 	
 	template< class T > 
@@ -24,7 +41,6 @@ namespace IMMathUtils
 	{
 		return FMath::Lerp(OutMin, OutMax, InvLerp(InMin, InMax, Value));
 	}
-	
 	template< class T > 
 	inline T Remap_Sat(T InMin, T InMax, T OutMin, T OutMax, T Value)
 	{
@@ -32,25 +48,32 @@ namespace IMMathUtils
 	}
 	
 	template<class T>
-		inline T Saturate(T Value)
+	inline T Saturate(T Value)
 	{
 		return FMath::Clamp(Value, T(0), T(1));
 	}
-    
+	inline FVector SaturateVector(const FVector& Value)
+	{
+		return FVector(
+			FMath::Clamp(Value.X, 0.0f, 1.0f),
+			FMath::Clamp(Value.Y, 0.0f, 1.0f),
+			FMath::Clamp(Value.Z, 0.0f, 1.0f)
+		);
+	}
+	
 	template<class T>
 	inline T Smoothstep(T InMin, T InMax, T Value)
 	{
 		T T_Val = InvLerp(InMin, InMax, Value);
 		return T_Val * T_Val * (T(3) - T(2) * T_Val);
 	}
-    
 	template<class T>
 	inline T Smoothstep_Sat(T InMin, T InMax, T Value)
 	{
 		T T_Val = InvLerp_Sat(InMin, InMax, Value);
 		return T_Val * T_Val * (T(3) - T(2) * T_Val);
 	}
-    
+
 	template<class T>
 	inline T Mad(T MulA, T MulB, T Add)
 	{
@@ -69,42 +92,10 @@ namespace IMMathUtils
 	{
 		return A * A;
 	}
-	
-	// ============ 向量专用 InvLerp（处理无限值） ============
-    
-    inline FVector InvLerpVector(const FVector& InMin, const FVector& InMax, const FVector& Value)
-    {
-        FVector Result = (Value - InMin) / (InMax - InMin);
-        return FVector(
-            FMath::IsFinite(Result.X) ? Result.X : 0.0f,
-            FMath::IsFinite(Result.Y) ? Result.Y : 0.0f,
-            FMath::IsFinite(Result.Z) ? Result.Z : 0.0f
-        );
-    }
-    
-    inline FVector InvLerpVector_Sat(const FVector& InMin, const FVector& InMax, const FVector& Value)
-    {
-        FVector Result = (Value - InMin) / (InMax - InMin);
-        return FVector(
-            FMath::Clamp(Result.X, 0.0f, 1.0f),
-            FMath::Clamp(Result.Y, 0.0f, 1.0f),
-            FMath::Clamp(Result.Z, 0.0f, 1.0f)
-        );
-    }
-    
-    inline FVector SaturateVector(const FVector& Value)
-    {
-        return FVector(
-            FMath::Clamp(Value.X, 0.0f, 1.0f),
-            FMath::Clamp(Value.Y, 0.0f, 1.0f),
-            FMath::Clamp(Value.Z, 0.0f, 1.0f)
-        );
-    }
-
-    inline FVector Pow2Vector(const FVector& A)
-    {
-        return FVector(A.X * A.X, A.Y * A.Y, A.Z * A.Z);
-    }
+	inline FVector Pow2Vector(const FVector& A)
+	{
+		return FVector(A.X * A.X, A.Y * A.Y, A.Z * A.Z);
+	}
 
     // ============ 向量工具函数 ============
     
@@ -127,12 +118,10 @@ namespace IMMathUtils
     {
         return Value.X + Value.Y;
     }
-    
     inline float SumVector(const FVector& Value)
     {
         return Value.X + Value.Y + Value.Z;
     }
-    
     inline float SumVector(const FVector4& Value)
     {
         return Value.X + Value.Y + Value.Z + Value.W;
@@ -142,12 +131,10 @@ namespace IMMathUtils
     {
         return SumVector(Value) * 0.5f;
     }
-    
     inline float AvgVector(const FVector& Value)
     {
         return SumVector(Value) * 0.33333333f;
     }
-    
     inline float AvgVector(const FVector4& Value)
     {
         return SumVector(Value) * 0.25f;
@@ -157,12 +144,54 @@ namespace IMMathUtils
     {
         return V.X * V.X + V.Y * V.Y;
     }
-
     inline float LengthSquared(const FVector& V)
     {
         return V.SizeSquared();
     }
 
+	inline FIntVector2 FloorVector2D(const FVector2D& V)
+	{
+		return FIntVector2(FMath::FloorToInt(V.X), FMath::FloorToInt(V.Y));
+	}
+	inline FIntVector FloorVector(const FVector& V)
+	{
+		return FIntVector(
+			FMath::FloorToInt(V.X),
+			FMath::FloorToInt(V.Y),
+			FMath::FloorToInt(V.Z)
+		);
+	}
+	inline FIntVector4 FloorVector4(const FVector4& V)
+	{
+		return FIntVector4(
+			FMath::FloorToInt(V.X),
+			FMath::FloorToInt(V.Y),
+			FMath::FloorToInt(V.Z),
+			FMath::FloorToInt(V.W)
+		);
+	}
+
+	inline FIntVector2 RoundVector2D(const FVector2D& V)
+	{
+		return FIntVector2(FMath::RoundToInt(V.X), FMath::RoundToInt(V.Y));
+	}
+	inline FIntVector RoundVector(const FVector& V)
+	{
+		return FIntVector(
+			FMath::RoundToInt(V.X),
+			FMath::RoundToInt(V.Y),
+			FMath::RoundToInt(V.Z)
+		);
+	}
+	inline FIntVector4 RoundVector4(const FVector4& V)
+	{
+		return FIntVector4(
+			FMath::RoundToInt(V.X),
+			FMath::RoundToInt(V.Y),
+			FMath::RoundToInt(V.Z),
+			FMath::RoundToInt(V.W)
+		);
+	}
     // ============ Slerp 球面插值 ============
     
     inline FVector Slerp(const FVector& VecA, const FVector& VecB, float Alpha)
@@ -422,7 +451,6 @@ namespace IMMathUtils
         float SumOfUniforms = SumOfUniformsV3.X + SumOfUniformsV3.Y + SumOfUniformsV3.Z;
         return (SumOfUniforms - 3.0f) * 1.4142135647f;
     }
-    
     inline float GaussianRandom(const FVector& P, float Mean, float StdDev)
     {
         FIntVector IntP(FMath::RoundToInt(P.X), FMath::RoundToInt(P.Y), FMath::RoundToInt(P.Z));
@@ -435,14 +463,12 @@ namespace IMMathUtils
         float Y = GenerateNormal_N6(IntP) * StdDev + Mean;
         return FMath::Pow(2.0f, Y);
     }
-    
     inline float LogeGaussianRandom(const FVector& P, float Mean, float StdDev)
     {
         FIntVector IntP(FMath::RoundToInt(P.X), FMath::RoundToInt(P.Y), FMath::RoundToInt(P.Z));
         float Y = GenerateNormal_N6(IntP) * StdDev + Mean;
         return FMath::Exp(Y);
     }
-    
     inline float Log10GaussianRandom(const FVector& P, float Mean, float StdDev)
     {
         FIntVector IntP(FMath::RoundToInt(P.X), FMath::RoundToInt(P.Y), FMath::RoundToInt(P.Z));
