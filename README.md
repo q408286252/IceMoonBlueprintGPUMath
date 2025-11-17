@@ -45,7 +45,7 @@ All **`IM | GPU`** nodes are written in C++. **However, frequent invocation of a
 
 <br>
 
-#### **中文版本 (放在英文版之后)**
+#### **中文版本 **
 
 # IceMoon Blueprint GPU Math (IMBGM)
 
